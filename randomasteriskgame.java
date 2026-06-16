@@ -33,6 +33,7 @@ class randomasteriskgame
 				  if(sample[j]==character)
 				  {
 					  chpersonality[j]=character;
+					  break;
 				  }  
 			  }
 			     guessasterisk=guessasterisk.copyValueOf(chpersonality,0,chpersonality.length);
