@@ -1,0 +1,28 @@
+interface employee
+{
+	abstract public void employee_joining(String empName);
+	abstract public int id_availing(String empName, int joining_ack);
+	abstract public int basicpay_Calculation(String empName,int empId,String role,int experience);
+	abstract public int grosspay_calculation(int empId,int basicPay);
+	abstract public byte grade_Eligibility(String name,int empId,int basicPay,int experience);//1 or 2
+	abstract public int increment_status(int empId ,int grade,int experience);
+	abstract public int trip_Eligibility(int empId,int grade,int duration);
+	abstract public  String feedback(int empId,String feedback);
+	abstract public String  complaint(int empId ,String complaint);
+	abstract public int employee_resign(int empId);
+}
+class company 
+{
+	int joining_ack;
+	String empName;
+	company(String empName,int joining_ack)
+	{
+		this.empName=empName;
+		this.joining_ack=joining_ack;
+	}
+	@Override public void joining(employee emp);
+	{
+		emp.employee_joining(String empName);
+		emp.
+	}
+	

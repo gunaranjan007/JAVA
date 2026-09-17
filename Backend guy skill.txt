@@ -1,0 +1,16 @@
+Java Fundamentals 
+OOP
+DSA
+Collections + Streams
+SQL + Database Design
+Git
+Spring Boot
+REST APIs
+JPA/Hibernate
+Testing (JUnit + Mockito)
+Spring Security + JWT
+Docker
+Redis
+Kafka
+System Design
+Cloud (AWS)
