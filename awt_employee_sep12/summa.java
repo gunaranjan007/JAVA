@@ -1,7 +1,21 @@
 
-
-
-import java.util.Scanner;
+/**
+class Counter
+{
+	int count=0;
+	Counter()
+	{
+		count++;
+	}
+	public static void main(String args[])
+    {
+		Counter a=new Counter();
+		Counter b=new Counter();
+		Counter c=new Counter();
+		System.out.println(count);
+	}
+}
+   /**import java.util.Scanner;
 import java.awt.FlowLayout;
 import javax.swing.*;
 import java.awt.event.ActionListener;

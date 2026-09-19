@@ -36,7 +36,7 @@ import java.awt.event.ActionEvent;
 	 public int netSalary(int basicPay)
 	{
 		int netSalary=0;
-		netSalary=(grossSalary(basicPay)-deductions(basicPay));
+		netSalary = grossSalary(basicPay) - deductions(basicPay);
 		
 	return(netSalary);
 	}//mthd netSalary Ends
@@ -162,10 +162,11 @@ class Employee_details extends JFrame
 	// HANDLER//
 	private class payslip_Txtfldhld implements ActionListener   // The class which is used to handle the gorss ,deduction and netsalary
     {
+		int empBasicPay=0;
 		public void actionPerformed(ActionEvent event)
 		{
 			String str_basicPay="",str_loanStatus="";
-			int empBasicPay=0;
+			
 			char loanStatus;
 			if(event.getSource()==tf_basicPay)
 			{
@@ -192,17 +193,19 @@ class Employee_details extends JFrame
 			//LOAN STATUS
 			if(event.getSource()==tf_loanStatus)
 			{
-				
+				//JOptionPane.showMessageDialog(null,"laon status");
 				tf_loanStatus.setEnabled(true);
 				str_loanStatus=event.getActionCommand();
 				loanStatus=str_loanStatus.charAt(0);
 				if(loanStatus=='y' || loanStatus=='Y')
 				{
 					Loanamount loanobj=new Loanamount();
+					loanobj.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+					loanobj.setSize(200,300);
+					loanobj.setVisible(true);
 					tf_loanStatus.setText(Integer.toString(loanobj.empLoanAmount));
 				}
 				//Loanamount loanobj1=new Loanamount();
-				
 			}
 			
 			
@@ -226,75 +229,74 @@ class Employee_details extends JFrame
 	
 		}
     }//private Payslip_Txtfldhld class Ends 
-}
-
-  
-
-class Loanamount extends JFrame
-{
-	 int empLoanAmount=0;
+	class Loanamount extends JFrame
+	{
+		 int empLoanAmount=0;
+		
+		//int empLoanAmount=0;//final monthly loan due amount after handling and calculation
 	
-	//int empLoanAmount=0;//final monthly loan due amount after handling and calculation
-
-	    private JLabel label_loan,label_interest;
-		private JTextField tf_loanamount,tf_interest,tf_monthlydue;//tf3 for Display  monthly loan amount
-		private JButton calcButton;
-		Loanamount()  //constructor for label Loanamount calculation
-		{
+			private JLabel label_loan,label_interest;
+			private JTextField tf_loanamount,tf_interest,tf_monthlydue;//tf3 for Display  monthly loan amount
+			private JButton calcButton;
 			
-			LoanCalculation loanHandler=new LoanCalculation();
-			
-			label_loan=new JLabel("Enter yout total loan Amount :");
-			add(label_loan);
-			tf_loanamount=new JTextField(10);
-			add(tf_loanamount);
-			tf_loanamount.addActionListener(loanHandler);
-			
-			label_interest=new JLabel("Enter your Interest :");
-			add(label_interest);
-			tf_interest=new JTextField(10);
-			add(tf_interest);
-			tf_interest.addActionListener(loanHandler);
-			
-			tf_monthlydue=new JTextField(10);
-			add(tf_monthlydue);
-			tf_monthlydue.setEnabled(false);
-			
-			calcButton=new JButton("Calculate");
-			add(calcButton);
-			calcButton.addActionListener(loanHandler);
-		}
-		private class LoanCalculation implements ActionListener   //created to check the monthly loan due  // Handles textfields of loan amount layout
-		{
-			
-			public void actionPerformed(ActionEvent event)
+			Loanamount()  //constructor for label Loanamount calculation
 			{
-				int loanAmt=0,Interest=0;
-				String str1="",str2="";
-				if(event.getSource()==tf_loanamount)
-				{
-					str1=event.getActionCommand();
-					loanAmt=Integer.parseInt(str1);
-				}
-				if(event.getSource()==tf_interest)
-				{
-					str2=event.getActionCommand();
-					Interest=Integer.parseInt(str2);
-				}
 				
-				//MONTHLY DUE 
-				if(event.getSource()==calcButton)
-				{
-					empLoanAmount = loanAmt * Interest / 100;  
-					tf_monthlydue.setText(Integer.toString(empLoanAmount));
-				}  
+				LoanCalculation loanHandler=new LoanCalculation();
+				
+				label_loan=new JLabel("Enter yout total loan Amount :");
+				add(label_loan);
+				tf_loanamount=new JTextField(10);
+				add(tf_loanamount);
+				tf_loanamount.addActionListener(loanHandler);
+				
+				label_interest=new JLabel("Enter your Interest :");
+				add(label_interest);
+				tf_interest=new JTextField(10);
+				add(tf_interest);
+				tf_interest.addActionListener(loanHandler);
+				
+				tf_monthlydue=new JTextField(10);
+				add(tf_monthlydue);
+				tf_monthlydue.setEnabled(false);
+				
+				calcButton=new JButton("Calculate");
+				add(calcButton);
+				calcButton.addActionListener(loanHandler);
 			}
-		}
+			private class LoanCalculation implements ActionListener   //created to check the monthly loan due  // Handles textfields of loan amount layout
+			{
+				
+				public void actionPerformed(ActionEvent event)
+				{
+	                int loanAmt=0,Interest=0;
+					String str1="",str2="";
+					if(event.getSource()==tf_loanamount)
+					{
+						str1=event.getActionCommand();
+						loanAmt=Integer.parseInt(str1);
+					}
+					if(event.getSource()==tf_interest)
+					{
+						str2=event.getActionCommand();
+						Interest=Integer.parseInt(str2);
+					}
+					
+					//MONTHLY DUE 
+					if(event.getSource()==calcButton)
+					{
+						empLoanAmount = loanAmt * Interest / 100;  
+						tf_monthlydue.setText(Integer.toString(empLoanAmount));
+					}  
+				}
+			}
+	}
+
 }//loan Amount class Ends 
 	
 
 
-public class Employee_layout
+public class J
 {
 	
 	public static void main(String args[])
