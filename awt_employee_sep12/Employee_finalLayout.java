@@ -168,7 +168,7 @@ class Employee_details extends JFrame
 		
 		LoanCalculation loanHandler=new LoanCalculation();
 				
-				label_loan=new JLabel("Enter yout total loan Amount :");
+				label_loan=new JLabel("Enter yout total loan Amount:");
 				add(label_loan);
 				tf_loanamount=new JTextField(10);
 				add(tf_loanamount);

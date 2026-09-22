@@ -244,6 +244,7 @@ class Employee_details extends JFrame
 				
 				LoanCalculation loanHandler=new LoanCalculation();
 				
+				setLayout(new FlowLayout());
 				label_loan=new JLabel("Enter yout total loan Amount :");
 				add(label_loan);
 				tf_loanamount=new JTextField(10);
@@ -266,10 +267,10 @@ class Employee_details extends JFrame
 			}
 			private class LoanCalculation implements ActionListener   //created to check the monthly loan due  // Handles textfields of loan amount layout
 			{
-				
+				int loanAmt=0,Interest=0;
 				public void actionPerformed(ActionEvent event)
 				{
-	                int loanAmt=0,Interest=0;
+	                
 					String str1="",str2="";
 					if(event.getSource()==tf_loanamount)
 					{
@@ -296,7 +297,7 @@ class Employee_details extends JFrame
 	
 
 
-public class J
+public class Employee_layout
 {
 	
 	public static void main(String args[])
