@@ -37,16 +37,14 @@ class quiz extends JFrame
 		add(opt3);
 		add(opt4);
 		
-		opt1.addActionListener(handler);
-		opt2.addActionListener(handler);
-		opt3.addActionListener(handler);
-		opt4.addActionListener(handler);
-		
-		
+		//opt1.addActionListener(handler);
+		//opt2.addActionListener(handler);
+		//opt.addActionListener(handler);
+		//opt4.addActionListener(handler);		
 		
 		buttonHandler handler=new buttonHandler();  // Button Handler
 		
-		JButton submit_button=new JButton("Submit");
+		submit_button=new JButton("Submit");
 		add(submit_button);
 		submit_button.addActionListener(handler);
 	}
@@ -71,7 +69,6 @@ class quiz extends JFrame
 		}
 	}	
 }
-
 public class quiz_awt 
 {
 	public static void main(String args[])
