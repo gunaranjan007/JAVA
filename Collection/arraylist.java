@@ -1,23 +1,38 @@
-import java.util.*;
+import java.util.Scanner;
+import java.util.ArrayList ;
 
-class arraylist {
-    public static void main(String args[]) {
+class arrayList
+{
+  public static void main(String args[])
+  {
+    ArrayList<String>  nams = new ArrayList<String>() ;
 
-        ArrayList<Integer> list = new ArrayList<>();//Moreover its like Array but it has some methods , only wrapper class and dynamic size not fixed 
+        nams.add("Siva") ;
+    nams.add("Nandhi") ;
+        nams.add("Sakthi") ;
+        nams.add("Vignesh") ;
+     System.out.println(nams);
+    
+      nams.add(1,"Vishnu") ;
+    System.out.println(nams);
+    
+    for( int i = 0 ; i < nams.size() ; ++i)
+      System.out.println(nams.get(i));
 
-        for (int i = 0; i < 10; i++) {
-            list.add(i);
-            System.out.print(i + " ");
-        }
+        String sn = "Siva" ;
+    /*nams.remove(sn) ;
+    System.out.println(nams);
+         */
+     
+    nams.set(4, "Luxmi") ; 
 
-        System.out.println();
-       
-		
-		System.out.println(list.get(4));//Get the value at that Specified Index
-		list.set(0,100);//set the Value replace with that specified value
-	    list.remove(4);//Remove the value at the Index
-		 System.out.println(list);
-		
-    }
-}
-	
+    nams.removeIf(s -> s.length() < 6 ) ;
+    System.out.println(nams);    
+    
+    nams.clear() ;
+
+    System.out.println(nams);    
+
+
+
+  }
