@@ -46,13 +46,14 @@ import java.awt.event.ActionEvent;
 	
 class Employee_details extends JFrame
 {
-	//static Scanner input=new Scanner(System.in);
+	String empName;
+	int empId=0;
 	
 	//CREATING EMPLOYEEMETHODOBJ FOR ACCESS THE EMPLOYEE METHODS AND VARIABLES 
 	EmployeeMethods employeeMethodobj=new EmployeeMethods();   // creating an object for using and Calling Methods
 	
-	private JLabel  basicPay_label,da_label,hra_label,cca_label,gross_label,lic_label,hi_label,pf_label,deduction_label,netSalary_label,loanStatus_label;
-	private JTextField tf_basicPay,tf_da,tf_hra,tf_cca,tf_hi,tf_pf,tf_lic,tf_gross,tf_deduction,tf_netSalary,tf_loanStatus;
+	private JLabel  basicPay_label,da_label,hra_label,cca_label,gross_label,lic_label,hi_label,pf_label,deduction_label,netSalary_label,loanStatus_label,empName_label,empId_label;
+	private JTextField tf_basicPay,tf_da,tf_hra,tf_cca,tf_hi,tf_pf,tf_lic,tf_gross,tf_deduction,tf_netSalary,tf_loanStatus,tf_empName,tf_empId;
 	private JButton grossButton,deductionButton,netSalaryButton;
 	
 	
@@ -66,10 +67,30 @@ class Employee_details extends JFrame
 			private JButton calcButton;
 	
 	
-	Employee_details() //constructor
+	Employee_details(String empName,int empId) //constructor
 	{
+		super("SALARY CALCULATION");
+		
+		this.empName=empName;
+		this.empId=empId;
+		
 		setLayout(new FlowLayout());
 	    payslip_Txtfldhld handler=new payslip_Txtfldhld();
+		
+		empName_label=new JLabel("Employee Name :");
+		add(empName_label); 
+		tf_empName=new JTextField(20);
+		add(tf_empName);  
+		
+		tf_empName.setText(empName);
+		
+		empId_label=new JLabel("Employee Identity :");
+		add(empId_label); 
+		tf_empId=new JTextField(10);
+		add(tf_empId);  
+		tf_empId.setText(Integer.toString(empId));
+		
+		
 	
 		basicPay_label=new JLabel("Enter your basic pay");
 		add(basicPay_label);
@@ -91,6 +112,8 @@ class Employee_details extends JFrame
 		tf_hra=new JTextField(15);
 		add(tf_hra);  //setText is calculated 
 		tf_hra.addActionListener(handler);
+		
+		
 		
 		
 		cca_label=new JLabel("Your Compensatory Allowance :");
@@ -294,10 +317,17 @@ class Employee_details extends JFrame
 
 public class Employee_finalLayout
 {
-	
+	static Scanner input=new Scanner(System.in);
 	public static void main(String args[])
 	{
-		Employee_details empobj=new Employee_details(); // No  parameter has been passed that already gets from action command( form the text field)
+		String name="";
+		int id=0;
+		
+		System.out.print("Enter your Name:");
+		name=input.nextLine();
+		System.out.print("Enter your Employee Identity Nunber");
+		id=input.nextInt();
+		Employee_details empobj=new Employee_details(name,id); // No  parameter has been passed that already gets from action command( form the text field)
 		
 		empobj.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		empobj.setSize(200,400);
