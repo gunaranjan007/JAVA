@@ -9,7 +9,7 @@ class randomnumber
 		int[] arr=new int[n];
 		for(int i=0;i<n;i++)
 		{
-			arr[i]=(int)(Math.random()*25)+1;//random from0 to 1 in array 25 be range 
+			arr[i]=(int)(Math.random()*25)+1;//Random from 0 to 1 in array 25 be range 
 		}
 	    for(int i=0;i<n;i++)
 		{
