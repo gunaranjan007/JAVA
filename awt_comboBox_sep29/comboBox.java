@@ -9,16 +9,16 @@ class ComboBox implements ActionListener//Combination Box
 	 ComboBox()
 	 {
 		 jf=new JFrame();
-		 label_Item=new JLabel("Select any one option");
-		 label_Item.setBounds(100,100,200,60);
+		 label_Item=new JLabel("Select any One option :");
+		 label_Item.setBounds(50, 50, 180, 30);
 		 
 		 button_select=new JButton("SELECT");
-		 button_select.setBounds(100,100,150,20);
+		 button_select.setBounds(50, 190, 180, 35);
 		 
 		 String[] item={"IDLI","PONGAL","DOSA","SAMOSA","VADA","BAJJI","POORI","CHAPATHI","IDIYAPPAM","BONDA"};
 		 
 		 jcb=new JComboBox(item);
-		 jcb.setBounds(200,150,100,80);
+		 jcb.setBounds(50, 140, 180, 35);
 		 
 		 jf.add(label_Item);
 		 jf.add(jcb);
@@ -40,9 +40,7 @@ class ComboBox implements ActionListener//Combination Box
 		
 			}		
 		}
-		
-		
-		 
+
 	 public static void main(String args[])
 	 {
 		ComboBox comboobj=new ComboBox();
