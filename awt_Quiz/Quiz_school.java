@@ -21,6 +21,9 @@ class Quiz extends JFrame implements quiz_Iterface
 	private ButtonGroup grp1,grp2,grp3,grp4,grp5;//5 Group of radio button for 5 Questions 
 	private JButton submitButton;
 	
+	String[] Questionarr=new String[5];
+	Questionarr=
+	
 	Quiz(String stuName,String stuId,int stuGrade)
 	{
 		super("Quiz");
@@ -47,10 +50,28 @@ class Quiz extends JFrame implements quiz_Iterface
 		Q1Label=new JLabel("Question 1:");
 		add(Q1Label);
 		Q1_TextField=new JTextField(50);
+		Q1_TextField.setText(Question[0]);
 		
-	
+		Q2Label=new JLabel("Question 2:");
+		add(Q2Label);
+		Q2_TextField=new JTextField(50);
+		Q2_TextField.setText(Question[1]);
 		
-	
+		Q3Label=new JLabel("Question 3:");
+		add(Q3Label);
+		Q3_TextField=new JTextField(50);
+		Q3_TextField.setText(Question[2]);
+		
+		Q4Label=new JLabel("Question 4:");
+		add(Q4Label);
+		Q4_TextField=new JTextField(50);
+		Q4_TextField.setText(Question[3]);
+		
+		Q5Label=new JLabel("Question 5:");
+		add(Q5Label);
+		Q5_TextField=new JTextField(50);
+		Q5_TextField.setText(Question[4]);
+
 	}
 	
 	//GENERATE RANDOM NUMBER OF ARRAY QUESTIONS 
@@ -78,10 +99,9 @@ class Quiz extends JFrame implements quiz_Iterface
 			if(randomarr[i]==questionArray[i])//
 			{
 				quizQuestion[i]=questionArray[i+1];
-
 			}
 		}
-	
+		
      return questionArray;
 	}
     
