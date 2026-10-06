@@ -30,7 +30,6 @@ class Quiz extends JFrame implements quiz_Iterface
 		this.stuName=stuName;
 		this.stuId=stuId;
 		this.stuGrade=stuGrade;
-		Super("QUIZ");
 		
 		stuName_Label=new Jlabel("Student Name :");
 		add(stuName_Label);
